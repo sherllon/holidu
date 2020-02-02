@@ -100,10 +100,12 @@ const HotelListing = (props) => {
                         </span>
                     </Typography>
                 </div>
-                <Grid container className={styles.stars} alignItems='center' spacing={1}>
-                    <Grid item>{ratingAvg}</Grid>
-                    <Grid item>{starsIcons}</Grid>
-                </Grid>
+                {rating.count > 0 &&
+                    <Grid container className={styles.stars} alignItems='center' spacing={1}>
+                        <Grid item>{ratingAvg}</Grid>
+                        <Grid item>{starsIcons}</Grid>
+                    </Grid>
+                }
                 <Grid container justify="flex-end">
                     <Button variant="contained" color="primary">Book now</Button>
                 </Grid>
